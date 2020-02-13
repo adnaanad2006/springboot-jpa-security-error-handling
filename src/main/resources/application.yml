@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: jpa-security
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/security-jpa?&serverTimezone=UTC
+    username: user
+    password: 123456
+    tomcat:
+      validation-query: SELECT 1
+      test-on-borrow: true
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8000
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+
